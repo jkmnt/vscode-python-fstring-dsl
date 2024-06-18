@@ -29,7 +29,7 @@ If the string is the template (f-string), the internal f-expressions will be syn
 
 ## Sample
 
-![sample.png](https://raw.githubusercontent.com/jkmnt/vscode-python-fstring-dsl/sample.png)
+![sample.png](https://raw.githubusercontent.com/jkmnt/vscode-python-fstring-dsl/main/sample.png)
 
 This sample shows the well-typed server-side Dialog component with
 bootsrap styling, htmx magic, and text escaping.
