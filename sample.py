@@ -1,6 +1,5 @@
 # stubs
 
-
 def html(s: str):
     return s
 
@@ -17,7 +16,6 @@ class SafeStr(str):
     pass
 
 
-# actual sample
 
 
 def Dialog(*, post_url: str, title: str, body: SafeStr, cancel_text: str | None = None, ok_text: str | None = None):
