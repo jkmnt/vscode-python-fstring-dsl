@@ -1,0 +1,79 @@
+{
+  "name": "vscode-python-fstring-dsl",
+  "publisher": "jkmnt",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "license": "MIT",
+  "displayName": "Highlight f-strings",
+  "icon": "icon.png",
+  "description": "Python - highlight HTML, SQL, JS, CSS in f-strings",
+  "categories": [
+    "Programming Languages",
+    "Themes"
+  ],
+  "keywords": [
+    "f-strings",
+    "fstrings",
+    "python",
+    "template",
+    "literal",
+    "strings",
+    "syntax",
+    "highlighting",
+    "html",
+    "sql"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "inlinesql",
+        "configuration": "./inline-sql.configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "inlinesql",
+        "scopeName": "source.sql.inline",
+        "path": "./syntaxes/sql.tmLanguage.json"
+      },
+      {
+        "injectTo": [
+          "source.python"
+        ],
+        "scopeName": "embed-in-python",
+        "path": "./syntaxes/embed-in-python.json",
+        "embeddedLanguages": {
+          "meta.embedded.inline.sql": "sql",
+          "meta.embedded.inline.html": "html",
+          "meta.embedded.inline.css": "css",
+          "meta.embedded.inline.js": "javascript"
+        }
+      },
+      {
+        "injectTo": [
+          "source.python"
+        ],
+        "scopeName": "embed-in-embedded-html",
+        "path": "./syntaxes/embed-in-embedded-html.json",
+        "embeddedLanguages": {
+          "meta.embedded.inline.f-expression.python": "python"
+        }
+      },
+      {
+        "injectTo": [
+          "source.python"
+        ],
+        "scopeName": "embed-in-embedded-sql",
+        "path": "./syntaxes/embed-in-embedded-sql.json",
+        "embeddedLanguages": {
+          "meta.embedded.inline.f-expression.python": "python"
+        }
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkmnt/vscode-python-fstring-dsl"
+  }
+}

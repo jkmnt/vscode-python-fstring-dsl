@@ -1,0 +1,13 @@
+{
+  "scopeName": "embed-in-embedded-html",
+  "fileTypes": [],
+  "injectionSelector": "L:meta.fstring.python meta.embedded.inline.html meta.tag",
+  "patterns": [
+    {
+      "include": "embed-in-python#f-escape"
+    },
+    {
+      "include": "embed-in-python#f-expression"
+    }
+  ]
+}

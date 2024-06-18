@@ -1,0 +1,13 @@
+{
+  "scopeName": "embed-in-embedded-sql",
+  "fileTypes": [],
+  "injectionSelector": "L:meta.fstring.python meta.embedded.inline.sql string.quoted.single.sql, L:meta.fstring.python meta.embedded.inline.sql string.quoted.double.sql",
+  "patterns": [
+    {
+      "include": "embed-in-python#f-escape"
+    },
+    {
+      "include": "embed-in-python#f-expression"
+    }
+  ]
+}
