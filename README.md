@@ -14,7 +14,7 @@ specific function (or method) call:
 
 <!-- like the Python's `typing.cast()` -->
 
-This function may be noop. Or it could do something useful, e.g. trimming whitespaces or logging.
+This function may be a noop. Or it could do something useful, e.g. trimming whitespaces or logging.
 
 ```python
 def html(s: str):
