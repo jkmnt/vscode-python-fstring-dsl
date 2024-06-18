@@ -20,7 +20,7 @@ class SafeStr(str):
 
 def Dialog(*, post_url: str, title: str, body: SafeStr, cancel_text: str | None = None, ok_text: str | None = None):
     cancel_text = cancel_text or _("Cancel")
-    ok_text = cancel_text or _("Ok")
+    ok_text = ok_text or _("Ok")
 
     return html(
         f"""
