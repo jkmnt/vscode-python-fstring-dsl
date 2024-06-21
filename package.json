@@ -1,7 +1,7 @@
 {
   "name": "vscode-python-fstring-dsl",
   "publisher": "jkmnt",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.22.0"
   },
@@ -25,7 +25,18 @@
     "html",
     "sql"
   ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/main.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "python-fstring-dsl.generate_grammar",
+        "category": "Highlight f-strings",
+        "title": "Generate grammar from `grammar.triggers`"
+      }
+    ],
     "languages": [
       {
         "id": "inlinesql",
@@ -71,10 +82,36 @@
           "meta.embedded.inline.f-expression.python": "python"
         }
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Highlight f-strings",
+      "properties": {
+        "python-fstring-dsl.grammar.triggers": {
+          "type": "object",
+          "default": {
+            "html": "html",
+            "sql": "sql",
+            "js": "js",
+            "css": "css"
+          },
+          "markdownDescription": "Function names (regex) to trigger the syntax highlight.\nOnly `html`, `sql`, `css`, `js` are supported.\n\nE.g.: `{\"html\":\"html|template[.]render\", \"css\":\"minify_css\", \"sql\":false}`\n\nRun **Highlight f-string: Generate grammar** command to apply changes."
+        }
+      }
+    }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jkmnt/vscode-python-fstring-dsl"
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "grammar": "node build.js",
+    "build": "npm run compile && npm run grammar",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "typescript": "^4.2.4",
+    "vscode": "^1.0.0"
   }
 }
