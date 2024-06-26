@@ -83,7 +83,7 @@
             ]
         },
         {
-            "begin": "(?x)\n                (?<!def\\s+)\n                \\b\n                (html)\n                \\s*\n                (\\()",
+            "begin": "(?x)\n                (?<!def\\s+)\n                \\b\n                (html|hitml\\.m|hitml\\.markup|hitml\\.document|ht\\.m|ht\\.markup|ht\\.document)\n                \\s*\n                (\\()",
             "end": "(?x)\n                (\\))\n                ",
             "name": "meta.function-call.python",
             "contentName": "meta.function-call.arguments.python",
@@ -161,7 +161,7 @@
             ]
         },
         {
-            "begin": "(?x)\n                (?<!def\\s+)\n                \\b\n                (css)\n                \\s*\n                (\\()",
+            "begin": "(?x)\n                (?<!def\\s+)\n                \\b\n                (css|hitml\\.css|ht\\.css)\n                \\s*\n                (\\()",
             "end": "(?x)\n                (\\))\n                ",
             "name": "meta.function-call.python",
             "contentName": "meta.function-call.arguments.python",
@@ -239,7 +239,7 @@
             ]
         },
         {
-            "begin": "(?x)\n                (?<!def\\s+)\n                \\b\n                (js)\n                \\s*\n                (\\()",
+            "begin": "(?x)\n                (?<!def\\s+)\n                \\b\n                (js|hitml\\.js|ht\\.js)\n                \\s*\n                (\\()",
             "end": "(?x)\n                (\\))\n                ",
             "name": "meta.function-call.python",
             "contentName": "meta.function-call.arguments.python",

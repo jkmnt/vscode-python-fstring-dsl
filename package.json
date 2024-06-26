@@ -1,117 +1,117 @@
 {
-  "name": "vscode-python-fstring-dsl",
-  "publisher": "jkmnt",
-  "version": "0.1.0",
-  "engines": {
-    "vscode": "^1.22.0"
-  },
-  "license": "MIT",
-  "displayName": "Highlight f-strings",
-  "icon": "icon.png",
-  "description": "Python - highlight HTML, SQL, JS, CSS in f-strings",
-  "categories": [
-    "Programming Languages",
-    "Themes"
-  ],
-  "keywords": [
-    "f-strings",
-    "fstrings",
-    "python",
-    "template",
-    "literal",
-    "strings",
-    "syntax",
-    "highlighting",
-    "html",
-    "sql"
-  ],
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "main": "./out/main.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "python-fstring-dsl.generate_grammar",
-        "category": "Highlight f-strings",
-        "title": "Generate grammar from `grammar.triggers`"
-      }
+    "name": "vscode-python-fstring-dsl",
+    "publisher": "jkmnt",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "license": "MIT",
+    "displayName": "Highlight f-strings",
+    "icon": "icon.png",
+    "description": "Python - highlight HTML, SQL, JS, CSS in f-strings",
+    "categories": [
+        "Programming Languages",
+        "Themes"
     ],
-    "languages": [
-      {
-        "id": "inlinesql",
-        "configuration": "./inline-sql.configuration.json"
-      }
+    "keywords": [
+        "f-strings",
+        "fstrings",
+        "python",
+        "template",
+        "literal",
+        "hitml",
+        "syntax",
+        "highlighting",
+        "html",
+        "sql"
     ],
-    "grammars": [
-      {
-        "language": "inlinesql",
-        "scopeName": "source.sql.inline",
-        "path": "./syntaxes/sql.tmLanguage.json"
-      },
-      {
-        "injectTo": [
-          "source.python"
-        ],
-        "scopeName": "embed-in-python",
-        "path": "./syntaxes/embed-in-python.json",
-        "embeddedLanguages": {
-          "meta.embedded.inline.sql": "sql",
-          "meta.embedded.inline.html": "html",
-          "meta.embedded.inline.css": "css",
-          "meta.embedded.inline.js": "javascript"
-        }
-      },
-      {
-        "injectTo": [
-          "source.python"
-        ],
-        "scopeName": "embed-in-embedded-html",
-        "path": "./syntaxes/embed-in-embedded-html.json",
-        "embeddedLanguages": {
-          "meta.embedded.inline.f-expression.python": "python"
-        }
-      },
-      {
-        "injectTo": [
-          "source.python"
-        ],
-        "scopeName": "embed-in-embedded-sql",
-        "path": "./syntaxes/embed-in-embedded-sql.json",
-        "embeddedLanguages": {
-          "meta.embedded.inline.f-expression.python": "python"
-        }
-      }
+    "activationEvents": [
+        "onStartupFinished"
     ],
-    "configuration": {
-      "title": "Highlight f-strings",
-      "properties": {
-        "python-fstring-dsl.grammar.triggers": {
-          "type": "object",
-          "default": {
-            "html": "html",
-            "sql": "sql",
-            "js": "js",
-            "css": "css"
-          },
-          "markdownDescription": "Function names (regex) to trigger the syntax highlight.\nOnly `html`, `sql`, `css`, `js` are supported.\n\nE.g.: `{\"html\":\"html|template[.]render\", \"css\":\"minify_css\", \"sql\":false}`\n\nRun **Highlight f-string: Generate grammar** command to apply changes."
+    "main": "./out/main.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "python-fstring-dsl.generate_grammar",
+                "category": "Highlight f-strings",
+                "title": "Generate grammar from `grammar.triggers`"
+            }
+        ],
+        "languages": [
+            {
+                "id": "inlinesql",
+                "configuration": "./inline-sql.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "inlinesql",
+                "scopeName": "source.sql.inline",
+                "path": "./syntaxes/sql.tmLanguage.json"
+            },
+            {
+                "injectTo": [
+                    "source.python"
+                ],
+                "scopeName": "embed-in-python",
+                "path": "./syntaxes/embed-in-python.json",
+                "embeddedLanguages": {
+                    "meta.embedded.inline.sql": "sql",
+                    "meta.embedded.inline.html": "html",
+                    "meta.embedded.inline.css": "css",
+                    "meta.embedded.inline.js": "javascript"
+                }
+            },
+            {
+                "injectTo": [
+                    "source.python"
+                ],
+                "scopeName": "embed-in-embedded-html",
+                "path": "./syntaxes/embed-in-embedded-html.json",
+                "embeddedLanguages": {
+                    "meta.embedded.inline.f-expression.python": "python"
+                }
+            },
+            {
+                "injectTo": [
+                    "source.python"
+                ],
+                "scopeName": "embed-in-embedded-sql",
+                "path": "./syntaxes/embed-in-embedded-sql.json",
+                "embeddedLanguages": {
+                    "meta.embedded.inline.f-expression.python": "python"
+                }
+            }
+        ],
+        "configuration": {
+            "title": "Highlight f-strings",
+            "properties": {
+                "python-fstring-dsl.grammar.triggers": {
+                    "type": "object",
+                    "default": {
+                        "sql": "sql",
+                        "html": "html|hitml\\.m|hitml\\.markup|hitml\\.document|ht\\.m|ht\\.markup|ht\\.document",
+                        "css": "css|hitml\\.css|ht\\.css",
+                        "js": "js|hitml\\.js|ht\\.js"
+                    },
+                    "markdownDescription": "Function names (regex) to trigger the syntax highlight.\nOnly `html`, `sql`, `css`, `js` are supported.\n\nE.g.: `{\"html\":\"html|template[.]render\", \"css\":\"minify_css\", \"sql\":false}`\n\nRun **Highlight f-string: Generate grammar** command to apply changes."
+                }
+            }
         }
-      }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jkmnt/vscode-python-fstring-dsl"
+    },
+    "scripts": {
+        "compile": "tsc -p .",
+        "grammar": "node build.js",
+        "build": "npm run compile && npm run grammar",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/node": "^18.14.0",
+        "typescript": "^4.2.4",
+        "vscode": "^1.0.0"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jkmnt/vscode-python-fstring-dsl"
-  },
-  "scripts": {
-    "compile": "tsc -p .",
-    "grammar": "node build.js",
-    "build": "npm run compile && npm run grammar",
-    "package": "vsce package"
-  },
-  "devDependencies": {
-    "@types/node": "^18.14.0",
-    "typescript": "^4.2.4",
-    "vscode": "^1.0.0"
-  }
 }
