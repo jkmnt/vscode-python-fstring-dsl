@@ -34,7 +34,7 @@
             {
                 "command": "python-fstring-dsl.generate_grammar",
                 "category": "Highlight f-strings",
-                "title": "Generate grammar from `grammar.triggers`"
+                "title": "Generate grammar"
             }
         ],
         "languages": [
