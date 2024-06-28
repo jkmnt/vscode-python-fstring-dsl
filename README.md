@@ -42,14 +42,15 @@ bootsrap styling, htmx magic, and text escaping.
 
 - f-strings are not very useful with CSS and JS. These languages are brace-heavy - too many braces to be escaped.
 
-- Add these lines to the VSCode settings.json to underline the embedded scopes as in the sample above:
+- Add these lines to the VSCode settings.json to style the f-expression braces italic as in the sample above:
+
   ```json
   "editor.tokenColorCustomizations": {
       "textMateRules": [
           {
-              "scope": "meta.embedded.inline.f-expression",
+              "scope": "meta.embedded.inline.f-expression constant.character.format.placeholder.other.python",
               "settings": {
-                  "fontStyle": "underline",
+                  "fontStyle": "italic",
               },
           },
       ]
