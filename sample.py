@@ -42,5 +42,6 @@ def Dialog(*, post_url: str, title: str, body: SafeStr, ok_text: str | None = No
                     </div>
                 </form>
             </div>
-        </div>"""
+        </div>
+        """
     )
