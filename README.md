@@ -39,7 +39,7 @@ Navigate to **Highlight f-strings** settings in VSCode or edit the settings.json
 
 The values are regexps. They are inlined inside the larger regexps so don't use capturing groups.
 
-The changes are not applied automatically. Run _(Ctrl-Shift-P)_ **Highlight f-string: Generate grammar** command to apply changes. This action will regenerate the internal grammar file of extension and reload VSCode.
+The changes are not applied automatically. Run _(Ctrl-Shift-P)_ **Highlight f-string: Generate grammar** command to regenerate the internal grammar file of extension and reload VSCode.
 
 ## More
 
