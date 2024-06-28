@@ -1,6 +1,6 @@
 # vscode-python-fstring-dsl
 
-Syntax highlighting for HTML, SQL, JS, CSS in Python f-strings
+VSCode syntax highlighting for HTML, SQL, JS, CSS in Python f-strings
 
 ## Usage
 
@@ -51,15 +51,22 @@ The changes are not applied automatically. Run _(Ctrl-Shift-P)_ **Highlight f-st
 
 - Add these lines to the VSCode settings.json to style the f-expression braces italic as in the sample above:
 
-  ```json
+  ```jsonc
   "editor.tokenColorCustomizations": {
-      "textMateRules": [
-          {
-              "scope": "meta.embedded.inline.f-expression constant.character.format.placeholder.other.python",
-              "settings": {
-                  "fontStyle": "italic",
+          "textMateRules": [
+              {
+                  "scope": "meta.embedded.inline.f-expression constant.character.format.placeholder.other.python",
+                  "settings": {
+                      "fontStyle": "italic bold",
+                  },
               },
-          },
+              // ... or maybe underline the full expression ?
+              // {
+              //     "scope": "meta.embedded.inline.f-expression",
+              //     "settings": {
+              //         "fontStyle": "underline",
+              //     },
+              // },
       ]
   },
   ```
