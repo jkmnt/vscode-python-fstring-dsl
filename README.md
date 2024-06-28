@@ -5,7 +5,7 @@ Syntax highlighting for HTML, SQL, JS, CSS in Python f-strings
 ## Usage
 
 The syntax highlighting is triggered by wrapping the DSL-string in a
-specific function (or method) call:
+specific function call:
 
 - `html(...)`
 - `sql(...)`
