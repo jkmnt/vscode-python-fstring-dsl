@@ -1,5 +1,6 @@
 # stubs
 
+
 def html(s: str):
     return s
 
@@ -16,10 +17,7 @@ class SafeStr(str):
     pass
 
 
-
-
-def Dialog(*, post_url: str, title: str, body: SafeStr, cancel_text: str | None = None, ok_text: str | None = None):
-    cancel_text = cancel_text or _("Cancel")
+def Dialog(*, post_url: str, title: str, body: SafeStr, ok_text: str | None = None):
     ok_text = ok_text or _("Ok")
 
     return html(
@@ -38,10 +36,9 @@ def Dialog(*, post_url: str, title: str, body: SafeStr, cancel_text: str | None 
                         { body }
                     </div>
                     <div class="modal-footer">
-                        <button type="button"
-                                class="btn btn-outline-secondary"
-                                data-bs-dismiss="modal">{ e(cancel_text) }</button>
-                        <button type="submit" class="btn btn-primary">{ e(ok_text) }</button>
+                        <button type="submit" class="btn btn-primary">
+                            { e(ok_text) }
+                        </button>
                     </div>
                 </form>
             </div>
