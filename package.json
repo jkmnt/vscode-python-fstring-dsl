@@ -91,10 +91,10 @@
                     "default": {
                         "sql": "sql",
                         "html": "html|hitml\\.m|hitml\\.markup|hitml\\.document|ht\\.m|ht\\.markup|ht\\.document",
-                        "css": "css|hitml\\.css|ht\\.css",
-                        "js": "js|hitml\\.js|ht\\.js"
+                        "css": "css|hitml\\.style|hitml\\.stylesheet|ht\\.style|ht\\.stylesheet",
+                        "js": "js|hitml\\.handler|hitml\\.script|ht\\.handler|ht\\.script"
                     },
-                    "markdownDescription": "Function names (regex) to trigger the syntax highlight.\nOnly `html`, `sql`, `css`, `js` are supported.\n\nE.g.: `{\"html\":\"html|template[.]render\", \"css\":\"minify_css\", \"sql\":false}`\n\nRun **Highlight f-string: Generate grammar** command to apply changes."
+                    "markdownDescription": "Function names (regex) to trigger the syntax highlight.\nOnly `html`, `sql`, `css`, `js` are supported.\n\nE.g.: `{\"html\":\"html|template\\.render\", \"css\":\"minify_css\", \"sql\":false}`\n\nRun **Highlight f-string: Generate grammar** command to apply changes."
                 }
             }
         }

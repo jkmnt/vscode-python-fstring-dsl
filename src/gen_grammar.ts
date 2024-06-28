@@ -17,12 +17,12 @@ export const DEF_SPECS: Spec[] = [
   },
   {
     lang: "css",
-    trigger: "css|hitml\\.css|ht\\.css",
+    trigger: "css|hitml\\.style|hitml\\.stylesheet|ht\\.style|ht\\.stylesheet",
     source: "source.css",
   },
   {
     lang: "js",
-    trigger: "js|hitml\\.js|ht\\.js",
+    trigger: "js|hitml\\.handler|hitml\\.script|ht\\.handler|ht\\.script",
     source: "source.js",
   },
 ];

@@ -14,17 +14,6 @@ specific function (or method) call:
 
 This function may be a noop like the Python's `typing.cast()`. Perhaps it could do something useful, e.g. trimming whitespaces or logging.
 
-```python
-def html(s: str):
-    return s.trim()
-```
-
-```python
-def sql(s: str):
-    logging.info(s)
-    return s
-```
-
 If the string is the template (f-string), the internal f-expressions will be syntax highlighted too.
 
 ## Sample
@@ -34,7 +23,25 @@ If the string is the template (f-string), the internal f-expressions will be syn
 This sample shows the well-typed server-side Dialog component with
 bootsrap styling, htmx magic, and text escaping.
 
-## Note
+## Configuration
+
+The trigger functions names may be configured to suit your project.
+Navigate to **Highlight f-strings** settings in VSCode or edit the settings.json:
+
+```jsonc
+"python-fstring-dsl.grammar.triggers": {
+    "html": "html|template\\.render", // html or template.render
+    "css": "css_\\d", // css_0, css_1, etc
+    "sql": false // disable the sql
+    // js is not defined, use the default
+}
+```
+
+The values are regexps. They are inlined inside the larger regexps so don't use capturing groups.
+
+The changes are not applied automatically. Run _(Ctrl-Shift-P)_ **Highlight f-string: Generate grammar** command to apply changes. This action will regenerate the internal grammar file of extension and reload VSCode.
+
+## More
 
 - The syntax matching is naive. It will work only for the simple common cases. If something don't color the way it should, the best workaround will be the template simplification.
 
